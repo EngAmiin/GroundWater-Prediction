@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GroundWater</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+  <header class="bg-primary shadow-md py-3">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div>
+                <a href="#" class="navbar-brand text-light fs-4 fw-bold"><i class="fa fa-code text-light"></i> GroundWater</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon p-3 bg-secondary rounded text-light"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#prediction">Prediction</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+  <section id="home" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2 class="mb-4">Welcome to GroundWater</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+          <p class="lead">Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+        </div>
+        <div class="col-lg-6" >
+          <img src="{{ url_for('static', filename='/img/home.png') }}" class="img-fluid" alt="Home Image" style="height: 30ch;">
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="about" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">About Us</h2>
+      <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </section>
+<section id="prediction">
+  <div class="container mt-5">
+    <h1 class="mb-4 text-center font-weight-bold text-primary">Prediction</h1>
+    <div class="row justify-content-center">
+      <div class="col-sm-8">
+        <form id="predictionForm" novalidate>
+          <div class="form-group">
+            <label for="WLM_RPE" class="fw-bold">WLM_RPE:</label>
+            <input type="number" class="form-control" id="WLM_RPE" name="WLM_RPE" required>
+            <div class="invalid-feedback">Please enter a valid WLM_RPE value.</div>
+          </div>
+          <div class="form-group">
+            <label for="WLM_GSE" class="fw-bold">WLM_GSE:</label>
+            <input type="number" class="form-control" id="WLM_GSE" name="WLM_GSE" required>
+            <div class="invalid-feedback">Please enter a valid WLM_GSE value.</div>
+          </div>
+          <div class="form-group">
+            <label for="RPE_WSE" class="fw-bold">RPE_WSE:</label>
+            <input type="number" class="form-control" id="RPE_WSE" name="RPE_WSE" required>
+            <div class="invalid-feedback">Please enter a valid RPE_WSE value.</div>
+          </div>
+          <div class="form-group">
+            <label for="GSE_WSE" class="fw-bold">GSE_WSE:</label>
+            <input type="number" class="form-control" id="GSE_WSE" name="GSE_WSE" required>
+            <div class="invalid-feedback">Please enter a valid GSE_WSE value.</div>
+          </div>
+          <div class="form-group">
+            <label for="WSE_QC" class="fw-bold">WSE_QC:</label>
+            <input type="number" class="form-control" id="WSE_QC" name="WSE_QC" required>
+            <div class="invalid-feedback">Please enter a valid WSE_QC value.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+         <div id="result" class="mt-4 fs-4 lead fw-bold"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section id="team" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Team</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card text-center">
+            <img src="{{ url_for('static', filename='/img/member1.png') }}" class="card-img-top" alt="Team Member 1">
+            <div class="card-body">
+              <h5 class="card-title">Mohamed Hussein</h5>
+              <p class="card-text">Software Develop</p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card text-center">
+            <img src="{{ url_for('static', filename='/img/member1.png') }}" class="card-img-top" alt="Team Member 1">
+            <div class="card-body">
+              <h5 class="card-title">Mohamed Dahir</h5>
+              <p class="card-text">Software Engineering</p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card text-center">
+            <img src="{{ url_for('static', filename='/img/member1.png') }}" class="card-img-top" alt="Team Member 1">
+            <div class="card-body">
+              <h5 class="card-title">Khadija Hassan</h5>
+              <p class="card-text">Mobile App Dev</p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card text-center">
+            <img src="{{ url_for('static', filename='/img/member1.png') }}" class="card-img-top" alt="Team Member 1">
+            <div class="card-body">
+              <h5 class="card-title">Naima Abdi</h5>
+              <p class="card-text">FullStack Developer</p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<footer class="bg-primary text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2024 GroundWater. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-right">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+  <!-- Script for handling form submission and custom validation -->
+<script>
+  $(document).ready(function() {
+    $('#predictionForm').submit(function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      var form = $(this);
+      var isValid = true;
+
+      form.find(':input').each(function() {
+        if ($(this).prop('required') && !$(this).val()) {
+          isValid = false;
+          $(this).addClass('is-invalid');
+        }
+      });
+
+      if (!isValid) {
+        form.addClass('was-validated');
+        return;
+      }
+
+      var formData = form.serialize();
+
+      $.ajax({
+        type: 'POST',
+        url: '/predict',
+        data: formData,
+        success: function(response) {
+          $('#result').html('<p>Prediction: ' + response.prediction + '</p>');
+        },
+        error: function(xhr, status, error) {
+          console.error(xhr.responseText);
+          $('#result').html('<p>Error: Unable to make prediction.</p>');
+        }
+      });
+    });
+
+    // Reset validation state on input change
+    $('#predictionForm input').change(function() {
+      $(this).removeClass('is-invalid');
+    });
+  });
+</script>
+</body>
+</html>
